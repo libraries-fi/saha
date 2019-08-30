@@ -21,4 +21,8 @@
 		<constructor-arg value="/srv/saha/backups/"/>
 	</bean>
 
+	<bean id="WWWDomain" class="java.lang.String">
+		<constructor-arg value="https://saha.kirjastot.fi/"/>
+	</bean>
+
 </beans>

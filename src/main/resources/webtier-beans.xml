@@ -53,9 +53,6 @@
 			value="true" />
 	</dwr:controller>
 
-	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-
 	<!-- freemarker config -->
 	<bean id="fmConfigurer"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
