@@ -267,11 +267,11 @@
 	[#assign isPicture = property.config.pictureProperty /]
 	[#if !inline && !isPicture]<div style="color:#888;">add new literal</div>[/#if]
 	[#if !inline && isPicture]
-		<form action="http://media.onki.fi/upload" enctype="multipart/form-data" method="post">
+		<form action="/saha/service/pics_upload" enctype="multipart/form-data" method="post">
 			<div style="color:#888;margin-bottom:5px;">upload file</div>
 			<input name="image" type="file">
 			<input name="target" type="hidden" value="${resourceUri}"/>
-			<input name="context" type="hidden" value="saha/${model}"/>
+			<input name="model" type="hidden" value="${model}"/>
 			<input name="property" type="hidden" value="${property.uri}"/>
 			<input type="submit" value="Upload"/>
 		</form>
@@ -423,7 +423,7 @@
 			[#assign label=propertyValueLabel]
 			[#if isPictureProperty || label?ends_with(".jpg") || label?ends_with(".jpeg") || label?ends_with(".png") || label?ends_with(".gif")]
 				<div style="margin:5px;">
-				[#if label?starts_with("http://") && !label?starts_with("http://demo.seco.tkk.fi/")]
+				[#if (label?starts_with("http://") || label?starts_with("https://")) && !label?starts_with("http://demo.seco.tkk.fi/")]
 					<a href="${label}" style="color:darkblue">
 					<img src="${label}" style="max-width:60px;max-height:60px;margin-right:5px;
 						border:thin solid black;"/></a>
