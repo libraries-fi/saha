@@ -17,7 +17,7 @@
 							[#assign label = property.valueLabel]
 							[#if label?ends_with(".jpg") || label?ends_with(".jpeg") || label?ends_with(".png") || label?ends_with(".gif")]
 								<div style="margin:5px;">
-								[#if label?starts_with("http://") && !label?starts_with("http://demo.seco.tkk.fi/")]
+								[#if (label?starts_with("http://") || label?starts_with("https://")) && !label?starts_with("http://demo.seco.tkk.fi/")]
 									<img src="${label}" style="max-width:150px;max-height:150px;margin-right:5px;border:thin solid black;"/>
 									${label}
 								[#else]

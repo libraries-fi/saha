@@ -308,7 +308,7 @@
 							[#assign label = property.valueLabel]
 							[#if property.config.pictureProperty || label?ends_with(".jpg") || label?ends_with(".jpeg") || label?ends_with(".png") || label?ends_with(".gif")]
 								<div style="margin:5px;">
-								[#if label?starts_with("http://") && !label?starts_with("http://demo.seco.tkk.fi/")]
+								[#if (label?starts_with("http://") || label?starts_with("https://")) && !label?starts_with("http://demo.seco.tkk.fi/")]
 									<a href="${label}" style="color:darkblue">
 									<img src="${label}" style="max-width:60px;max-height:60px;margin-right:5px;
 										border:thin solid black;"/>${label}</a>
